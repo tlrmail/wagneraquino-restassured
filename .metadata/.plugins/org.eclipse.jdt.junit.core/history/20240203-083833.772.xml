@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="VerbosTest" project="CursoRest" tests="8" started="8" failures="0" errors="0" ignored="0">
+  <testsuite name="br.ce.wcaquino.rest.VerbosTest" time="6.847">
+    <testcase name="test_a_deveSalvarUmUsuarioVerboPOSTViaJSON" classname="br.ce.wcaquino.rest.VerbosTest" time="2.04"/>
+    <testcase name="test_b_naoDeveSalvarUsuarioSemNomeVerboPOSTViaJSON" classname="br.ce.wcaquino.rest.VerbosTest" time="0.629"/>
+    <testcase name="test_c_naoDeveSalvarUsuarioVerboPOSTViaXML" classname="br.ce.wcaquino.rest.VerbosTest" time="0.744"/>
+    <testcase name="test_d_deveSalvarUmUsuarioVerboPUTViaJSON" classname="br.ce.wcaquino.rest.VerbosTest" time="0.644"/>
+    <testcase name="test_e_deveCustomizarURLVerboPUTViaJSON_1" classname="br.ce.wcaquino.rest.VerbosTest" time="0.954"/>
+    <testcase name="test_f_deveCustomizarURLVerboPUTViaJSON_2" classname="br.ce.wcaquino.rest.VerbosTest" time="0.634"/>
+    <testcase name="test_g_deveRemoverUsuarioVerboDELETEViaJSON" classname="br.ce.wcaquino.rest.VerbosTest" time="0.588"/>
+    <testcase name="test_h_naoDeveRemoverUsuarioInexistenteVerboDELETEViaJSON" classname="br.ce.wcaquino.rest.VerbosTest" time="0.614"/>
+  </testsuite>
+</testrun>

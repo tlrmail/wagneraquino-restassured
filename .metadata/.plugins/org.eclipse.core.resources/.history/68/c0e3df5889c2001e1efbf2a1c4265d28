@@ -1,0 +1,31 @@
+package br.ce.wcaquino.rest;
+
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.notNullValue;
+
+import org.junit.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+
+public class SerializacaoTest {
+
+	@Test
+	public void test_a_deveSalvarUmUsuarioUsandoUmMap() {
+		RestAssured
+			.given() //Pré-condições
+				.log().all()
+				.contentType(ContentType.JSON)
+				.body("{\"name\": \"João Calvino\", \"age\": 36, \"salary\": 1234.5678 }")
+			.when() //Ação
+				.post("/users")
+			.then() //Assert
+				.log().all()
+				.statusCode(201)
+				.body("id", is(notNullValue()))
+				.body("name", is("João Calvino"))
+				.body("age", is(36))
+			;
+	}
+
+}

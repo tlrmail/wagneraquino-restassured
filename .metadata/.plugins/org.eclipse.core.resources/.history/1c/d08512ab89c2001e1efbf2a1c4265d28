@@ -1,0 +1,39 @@
+package br.ce.wcaquino.rest;
+
+import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.notNullValue;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.junit.Test;
+
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+
+public class SerializacaoTest {
+
+	@Test
+	public void test_a_deveSalvarUmUsuarioUsandoUmMap() {
+
+		Map<String, Object> params = new HashMap<String, Object>();
+		params.put("name", "Usuario via map");
+		params.put("age", 25);
+		
+		RestAssured
+			.given() //Pré-condições
+				.log().all()
+				.contentType(ContentType.JSON)
+				.body(params)
+			.when() //Ação
+				.post("/users")
+			.then() //Assert
+				.log().all()
+				.statusCode(201)
+				.body("id", is(notNullValue()))
+				.body("name", is("Usuario via map"))
+				.body("age", is(25))
+			;
+	}
+
+}
